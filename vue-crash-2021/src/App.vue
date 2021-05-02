@@ -1,18 +1,76 @@
 <template>
   <div class="container">
-    <h1> Hello World </h1>
+    <Header title= 'Teste' />
+    <AddTask @add-task="addTask"/>
+    <Tasks @toggle-reminder="toggleReminder" @delete-task="deleteTask" :tasks="tasks" />
+    
   </div>
 </template>
 
+
+
+
+
 <script>
+import Header from './components/Header'
+import Tasks from './components/Tasks'
+import AddTask from './components/AddTask'
 
 export default {
   name: 'App',
   components: {
+    Header,
+    Tasks,
+    AddTask,
+  },
+  data(){
+    return{
+      tasks: [],
+    }
+  },
+  methods:{
+    addTask(newTask){
+      this.tasks = [...this.tasks, newTask]
+    },
+    deleteTask(id) {
+      if(confirm('Are you sure?')){
+        this.tasks = this.tasks.filter((task) => task.id !== id)
+      }
+    },
+    toggleReminder(id){
+      this.tasks = this.tasks.map((task) => task.id === id ? {...task, reminder: !task.reminder} : task)
+    }
+    
 
+  },
+  created(){
+    this.tasks = [
+      {
+        id:1,
+        text:'Doctors Appointment',
+        day: 'March 1st at 2:30pm',
+        reminder: true,
+      },
+      {
+        id:2,
+        text:'Daily',
+        day: 'March 1st at 3:30pm',
+        reminder: true,
+      },
+      {
+        id:3,
+        text:'Functional meeting',
+        day: 'March 2st at 3:30pm',
+        reminder: false,
+      }
+    ]
   }
 }
 </script>
+
+
+
+
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
