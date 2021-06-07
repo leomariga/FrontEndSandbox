@@ -1,22 +1,27 @@
 <template>
-  <!-- Default form login -->
+<div
+  class="fixed-top d-flex align-items-center justify-content-center"
+  style="bottom: 0; overflow-y: auto"
+>
+
   <form>
-    <p class="h4 text-center mb-4">Sign in</p>
-    <label for="defaultFormLoginEmailEx" class="grey-text">Your email</label>
-    <input type="email" id="defaultFormLoginEmailEx" class="form-control"/>
+    <p class="h4 text-center mb-4">Sign up</p>
+    <label for="defaultFormRegisterNameEx" class="grey-text">Your name</label>
+    <input type="text" id="defaultFormRegisterNameEx" class="form-control"/>
     <br/>
-    <label for="defaultFormLoginPasswordEx" class="grey-text">Your password</label>
-    <input type="password" id="defaultFormLoginPasswordEx" class="form-control"/>
+    <label for="defaultFormRegisterEmailEx" class="grey-text">Your email</label>
+    <input type="email" id="defaultFormRegisterEmailEx" class="form-control"/>
+    <br/>
+    <label for="defaultFormRegisterConfirmEx" class="grey-text">Confirm your email</label>
+    <input type="email" id="defaultFormRegisterConfirmEx" class="form-control"/>
+    <br/>
+    <label for="defaultFormRegisterPasswordEx" class="grey-text">Your password</label>
+    <input type="password" id="defaultFormRegisterPasswordEx" class="form-control"/>
     <div class="text-center mt-4">
-      <button class="btn btn-indigo" type="submit">Login</button>
+      <button class="btn btn-unique" type="submit">Register</button>
     </div>
   </form>
-  <!-- Default form login -->
+
+</div>
+
 </template>
-
-<script>
-export default {
-    name: 'Login',
-}
-</script>
-
