@@ -4,7 +4,7 @@
       "id": 1,
       "text": "Doctors Appointment",
       "day": "March 1st at 2:30pm",
-      "reminder": true
+      "reminder": false
     },
     {
       "id": 3,
@@ -17,6 +17,12 @@
       "day": "9wadaw",
       "reminder": false,
       "id": 5
+    },
+    {
+      "text": "reunião mapia",
+      "day": "sábado 10h30",
+      "reminder": true,
+      "id": 6
     }
   ]
 }
